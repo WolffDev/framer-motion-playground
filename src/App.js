@@ -9,8 +9,6 @@ import black from './black.png'
 import green from './green.png'
 import Accordian from './Accordian'
 
-const bodytext = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo aperiam aliquam vel voluptates suscipit, maxime ullam sunt necessitatibus corporis nobis eligendi totam dicta rem maiores error dolore quod in cumque asperiores quasi, omnis minima rerum deleniti? Animi, vero, reiciendis, perspiciatis repellendus nemo quaerat ut earum cum dignissimos dicta a ipsum?`
-
 const App = () => {
   const [value, setValue] = useState(0)
   const [isToggled, setToggle] = useState(false)
@@ -30,7 +28,7 @@ const App = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <Accordian title='The title!' body={bodytext} />
+        <Accordian />
         <CardGrid>
           <Modal isToggled={isToggled} setToggle={setToggle}>
             <Card style={{ background: 'var(--blue)' }}>
