@@ -37,7 +37,6 @@
     "editor.formatOnSave": true
   },
   "prettier.disableLanguages": ["javascript", "javascriptreact"],
-  "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
