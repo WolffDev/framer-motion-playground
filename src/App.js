@@ -19,13 +19,6 @@ const App = () => {
 				<h1>Header</h1>
 			</Header>
 			<Container>
-				<Modal isToggled={isToggled} setToggle={setToggle}>
-					<Card style={{ background: 'var(--blue)' }}>
-						<h3>Some card</h3>
-						<img alt='test 123' src={blue} />
-					</Card>
-				</Modal>
-
 				<h2>Super Cool</h2>
 				<button onClick={() => setToggle(true)}>Toggle</button>
 				<input
@@ -36,6 +29,12 @@ const App = () => {
 					onChange={(e) => setValue(e.target.value)}
 				/>
 				<CardGrid>
+					<Modal isToggled={isToggled} setToggle={setToggle}>
+						<Card style={{ background: 'var(--blue)' }}>
+							<h3>Some card</h3>
+							<img alt='test 123' src={blue} />
+						</Card>
+					</Modal>
 					<Card
 						style={{ background: 'var(--purp)' }}
 						initial={{ opacity: 0 }}
