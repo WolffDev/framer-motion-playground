@@ -1,0 +1,50 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "breadcrumbs.enabled": true,
+  "window.zoomLevel": 0,
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "search.exclude": {
+    "/dist": true,
+    "/build": true,
+    "/Dockerfiles": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.editor.showTabs": true,
+  "editor.cursorStyle": "line",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
