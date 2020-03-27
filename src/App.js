@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardGrid, Container, Header } from "./Elements";
 import "./App.css";
 import Menu from "./Menu";
@@ -26,10 +26,19 @@ function App() {
         <button onClick={() => setToggle(prevValue => prevValue ? 0 : 1)}>Toggle</button>
         <input type="range" min="-100" max="100" value={value} onChange={e => setValue(e.target.value)} />
         <CardGrid>
-          <Card style={{ background: "var(--purp)" }}>
-            <h3>Some card</h3>
-            <img alt="test 123" src={purp} />
-          </Card>
+          <AnimatePresence>
+            {isToggled && (
+              <Card
+                style={{ background: "var(--purp)" }}
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1, x: +value}}
+                exit={{ opacity: 0 }}
+              >
+                <h3>Some card</h3>
+                <img alt="test 123" src={purp} />
+              </Card>
+            )}
+          </AnimatePresence>
 
           <Card style={{ background: "var(--blue)" }}>
             <h3>Some card</h3>
