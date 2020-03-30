@@ -37,7 +37,11 @@ const App = () => {
           onChange={(e) => setValue(e.target.value)}
         />
         <Accordian />
-        <CardGrid>
+        <CardGrid
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, x: +value }}
+          exit={{ opacity: 0 }}
+        >
           <Modal isToggled={isToggled} setToggle={setToggle}>
             <Card style={{ background: 'red' }}>
               <h3>Some card</h3>
@@ -45,18 +49,30 @@ const App = () => {
             </Card>
           </Modal>
           <Card
-            whileHover={{ scale: [1.02, 1, 1.2] }}
-            whileTap={{ background: 'var(--red)' }}
-            onHoverEnd={(e) => console.log('hover end', e)}
+            // whileHover={{ scale: [1.02, 1, 1.2] }}
+            // whileTap={{ background: 'var(--red)' }}
+            // onHoverEnd={(e) => console.log('hover end', e)}
+            drag
+            dragConstraints={{
+              top: -100,
+              left: -100,
+              bottom: 100,
+              right: 100,
+            }}
             style={{ background: 'var(--purp)' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, x: +value }}
-            exit={{ opacity: 0 }}
           >
             <h3>Some card</h3>
             <img alt='test 123' src={purp} />
           </Card>
 
+          <Card
+            style={{ background: 'var(--blue)' }}
+            drag='x'
+            dragConstraints={{ left: 0, right: 0 }}
+          >
+            <h3>Some card</h3>
+            <img alt='test 123' src={blue} />
+          </Card>
           <Card style={{ background: 'var(--black)' }}>
             <h3>Some card</h3>
             <img alt='test 123' src={black} />
