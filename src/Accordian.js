@@ -10,7 +10,11 @@ const Accordian = ({ title = theTitle, body = bodytext }) => {
   const [isToggled, setIsToggled] = useState(false)
   return (
     <article>
-      <h2 role='button' onClick={() => setIsToggled((prevState) => !prevState)}>
+      <h2
+        role='button'
+        onClick={() => setIsToggled((prevState) => !prevState)}
+        style={{ cursor: 'pointer' }}
+      >
         {title}
       </h2>
       <AnimatePresence>

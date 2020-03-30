@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Card, CardGrid, Container, Header } from './Elements'
 import './App.css'
 import Modal from './Modal'
@@ -13,7 +14,11 @@ const App = () => {
   const [value, setValue] = useState(0)
   const [isToggled, setToggle] = useState(false)
   return (
-    <div>
+    <motion.div
+      // initial={{ opacity: 0 }}
+      animate={{ opacity: [0, 1, 0, 1] }}
+      transition={{ duration: 5, times: [0, 0.2, 0.3, 1] }}
+    >
       <Header>
         <Menu />
         <h1>Header</h1>
@@ -56,7 +61,7 @@ const App = () => {
           </Card>
         </CardGrid>
       </Container>
-    </div>
+    </motion.div>
   )
 }
 
