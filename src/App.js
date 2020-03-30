@@ -39,12 +39,15 @@ const App = () => {
         <Accordian />
         <CardGrid>
           <Modal isToggled={isToggled} setToggle={setToggle}>
-            <Card style={{ background: 'var(--blue)' }}>
+            <Card style={{ background: 'red' }}>
               <h3>Some card</h3>
               <img alt='test 123' src={blue} />
             </Card>
           </Modal>
           <Card
+            whileHover={{ scale: [1.02, 1, 1.2] }}
+            whileTap={{ background: 'var(--red)' }}
+            onHoverEnd={(e) => console.log('hover end', e)}
             style={{ background: 'var(--purp)' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, x: +value }}
