@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardGrid, Container, Header } from './Elements'
+import Nav from './Nav'
 import './App.css'
 import Modal from './Modal'
 import Menu from './Menu'
@@ -12,15 +13,17 @@ import Accordian from './Accordian'
 
 const App = () => {
   const [value, setValue] = useState(0)
+  const [isNavOpen, setIsNavOpen] = useState(false)
   const [isToggled, setToggle] = useState(false)
   return (
     <motion.div
-      // initial={{ opacity: 0 }}
-      animate={{ opacity: [0, 1, 0, 1] }}
-      transition={{ duration: 5, times: [0, 0.2, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <Header>
-        <Menu />
+        <Menu onClick={() => setIsNavOpen(true)} />
+        <Nav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
         <h1>Header</h1>
       </Header>
       <Container>

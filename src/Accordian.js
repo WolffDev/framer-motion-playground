@@ -6,6 +6,11 @@ import { useState } from 'react'
 const bodytext = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo aperiam aliquam vel voluptates suscipit, maxime ullam sunt necessitatibus corporis nobis eligendi totam dicta rem maiores error dolore quod in cumque asperiores quasi, omnis minima rerum deleniti? Animi, vero, reiciendis, perspiciatis repellendus nemo quaerat ut earum cum dignissimos dicta a ipsum?`
 const theTitle = `The awesome title`
 
+const variants = {
+  open: { opacity: 1, height: 'auto' },
+  closed: { opacity: 0, height: 0 },
+}
+
 const Accordian = ({ title = theTitle, body = bodytext }) => {
   const [isToggled, setIsToggled] = useState(false)
   return (
@@ -20,10 +25,11 @@ const Accordian = ({ title = theTitle, body = bodytext }) => {
       <AnimatePresence>
         {isToggled && (
           <motion.div
+            variants={variants}
             style={{ overflow: 'hidden' }}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial='closed'
+            animate='open'
+            exit='closed'
           >
             <p>{body}</p>
           </motion.div>
