@@ -7,6 +7,7 @@ import {
 } from 'framer-motion'
 import { Card, CardGrid, Container, Header } from './Elements'
 import Nav from './Nav'
+import Squares from './Squares'
 import './App.css'
 import Modal from './Modal'
 import Menu from './Menu'
@@ -15,6 +16,7 @@ import purp from './purp.png'
 import black from './black.png'
 import green from './green.png'
 import Accordian from './Accordian'
+import Slideshow from './Slideshow'
 
 const App = () => {
   const x = useMotionValue(0)
@@ -23,8 +25,6 @@ const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [isToggled, setToggle] = useState(false)
   const [isCardActive, setIsCardActive] = useState(true)
-
-  console.log('x', x)
 
   return (
     <motion.div
@@ -38,6 +38,8 @@ const App = () => {
         <h1>Header</h1>
       </Header>
       <Container>
+        <Slideshow />
+        <Squares />
         <h2>Super Cool</h2>
         <button onClick={() => setToggle(true)}>Toggle</button>
         <input
